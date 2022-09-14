@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 mongoose.connect(
-  "mongodb+srv://Skeleton8635:7M221cd2TjvJwuXf@cluster0.mxxnmuk.mongodb.net/socialmedia?retryWrites=true&w=majority"
+  "mongodb+srv://Skeleton8635:@cluster0.mxxnmuk.mongodb.net/socialmedia?retryWrites=true&w=majority"
 );
 
 app.get("/getUsers", (req, res) => {
