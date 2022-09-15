@@ -3,14 +3,16 @@ const app = express();
 const mongoose = require("mongoose");
 const UserModel = require("./models/Users");
 
+const dotenv = require("dotenv");
+dotenv.config();
+const url = process.env.MONGOLAB_URI;
+
 const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://Skeleton8635:@cluster0.mxxnmuk.mongodb.net/socialmedia?retryWrites=true&w=majority"
-);
+mongoose.connect(`${url}`);
 
 app.get("/getUsers", (req, res) => {
   UserModel.find({}, (err, result) => {
